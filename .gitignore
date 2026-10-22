@@ -1,0 +1,12 @@
+# Saída de compilação (o .exe vai para as releases do GitHub)
+bin/
+obj/
+dist/
+
+# Backups do teclado: têm o número de série do aparelho
+backup/
+
+__pycache__/
+*.pyc
+.vs/
+*.user

@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Utilitário portátil: um único .exe para o .NET Framework 4.8, que já vem no Windows 11.
+    Código em três partes: src\Protocolo, src\Aparelhos e src\Interface.
+    Para gerar o executável, use build.ps1.
+  -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <RootNamespace>OpenRazerProfiler</RootNamespace>
+    <AssemblyName>OpenRazerProfiler</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>src\Interface\app.ico</ApplicationIcon>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <Version>1.0.0</Version>
+    <Product>OpenRazerProfiler</Product>
+    <Description>Perfis, iluminação e teclas gravados direto na memória do teclado Razer</Description>
+    <Authors>OpenRazerProfiler</Authors>
+    <Company>OpenRazerProfiler</Company>
+    <Copyright>Copyright (c) 2026 OpenRazerProfiler. Licença MIT.</Copyright>
+    <NeutralLanguage>pt-BR</NeutralLanguage>
+    <SatelliteResourceLanguages>pt-BR</SatelliteResourceLanguages>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="src\Protocolo\**\*.cs" />
+    <Compile Include="src\Aparelhos\**\*.cs" />
+    <Compile Include="src\Interface\**\*.cs" />
+    <!-- Também como recurso, para a janela ter todos os tamanhos (o ícone do .exe só sai em 32 px). -->
+    <EmbeddedResource Include="src\Interface\app.ico" LogicalName="OpenRazerProfiler.app.ico" />
+  </ItemGroup>
+
+</Project>

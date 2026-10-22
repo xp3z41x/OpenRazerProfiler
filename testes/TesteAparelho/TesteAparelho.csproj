@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Ferramenta de teste (console) que usa as camadas de protocolo e aparelhos contra o teclado real. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\src\Protocolo\**\*.cs" />
+    <Compile Include="..\..\src\Aparelhos\**\*.cs" />
+    <Compile Include="*.cs" />
+  </ItemGroup>
+</Project>
